@@ -12,6 +12,8 @@ function Table() {
   const updateImage = (idx) => {
     console.log("update called" + idx);
     console.log(updateFile);
+    setDeleteId(idx);
+    
   }
   const data = [{
         "State": "Uttar Pradesh",
