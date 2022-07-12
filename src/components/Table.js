@@ -38,6 +38,7 @@ function Table() {
 
   const listItems = data.map(
   (element, index) => {
+    console.log(index+element.State);
     return (
         <ul>
           <li key = {index+element.State}>
