@@ -1,17 +1,36 @@
 // e2e-run-tests.js
 const cypress = require('cypress')
+const nodemailer = require('nodemailer');
+var jsonfile = require('jsonfile');
 
-const { merge } = require('mochawesome-merge')
+const sendemail = (res) =>{
+  var transporter = nodemailer.createTransport({
+    service: 'gmail',
+    auth: {
+      user: 'shubhamgargshubhamgargshubham@gmail.com',
+      pass: 'ifnqlhtpdxuzllgu'
+    }
+  });
+  var mailOptions = {
+    from: 'shubhamgargshubhamgargshubham@gmail.com',
+    to: 'shubham.garg@carpl.ai',
+    cc: 'shubhamgarg1671@gmail.com',
+    subject: 'Test Results',
+    text: `${res}`
+};
 
-// See Params section below
-const options = {
-  files: [
-    './report/*.json',
+  transporter.sendMail(mailOptions, function(error, info){
+    if (error) {
+      console.log(error);
+      res.status(404).send(error);
+    } else {
+      console.log(`Email sent: ${info.response}`)
+      res.status(200).send(`Email sent: ${info.response}`);
+    }
+  });
 
-    // you can specify more files or globs if necessary:
-    './mochawesome-report/*.json',
-  ],
 }
+
 
 cypress.run({
   browser: 'chrome',
@@ -19,10 +38,14 @@ cypress.run({
     baseUrl: 'http://localhost:3000',
     video: false,
   },
-}).then(()=>{
-    console.log("Done testing ");
-    merge(options).then(report => {
-    console.log(report)
+}).then((res)=> {
+  console.log(res);
+  JSON.stringify(res)
 })
-      
+.then((result) =>{
+  var fs = require('fs');
+  fs.writeFile('myResult.json', result, 'utf8', (e)=>{
+    console.log(e);
+  });
+  // sendemail(result);
 });

@@ -5,9 +5,9 @@
     "passes": 1,
     "pending": 0,
     "failures": 0,
-    "start": "2022-07-12T12:53:03.294Z",
-    "end": "2022-07-12T12:53:10.623Z",
-    "duration": 7329,
+    "start": "2022-07-13T06:21:32.754Z",
+    "end": "2022-07-13T06:21:40.250Z",
+    "duration": 7496,
     "testsRegistered": 1,
     "passPercent": 100,
     "pendingPercent": 0,
@@ -18,7 +18,7 @@
   },
   "results": [
     {
-      "uuid": "22fa48e3-14c1-48b5-b387-4360cb2b17c1",
+      "uuid": "460b2d0c-7ca8-429c-87b1-03e73e15a56c",
       "title": "",
       "fullFile": "cypress\\e2e\\playground.cy.js",
       "file": "cypress\\e2e\\playground.cy.js",
@@ -27,7 +27,7 @@
       "tests": [],
       "suites": [
         {
-          "uuid": "7fe4f52d-d4de-4983-93a6-d1c8eb3289ea",
+          "uuid": "2467ad80-e1cb-4872-b82a-c35ed387ee17",
           "title": "Tutorialspoint Test",
           "fullFile": "",
           "file": "",
@@ -38,7 +38,7 @@
               "title": "Test Case6",
               "fullTitle": "Tutorialspoint Test Test Case6",
               "timedOut": null,
-              "duration": 4257,
+              "duration": 4312,
               "state": "passed",
               "speed": "fast",
               "pass": true,
@@ -47,20 +47,20 @@
               "context": null,
               "code": "//file to be uploaded path in project folder\nconst p = 'Picture.png'; // launch URL\ncy.visit(\"https://the-internet.herokuapp.com/upload\"); //upload file with attachFile\ncy.get('#file-upload').attachFile(p); //click on upload\ncy.get('#file-submit').click(); //verify uploaded file\ncy.get('#uploaded-files').contains('Picture');",
               "err": {},
-              "uuid": "2939d71c-06bb-4df0-9d55-dd110431585c",
-              "parentUUID": "7fe4f52d-d4de-4983-93a6-d1c8eb3289ea",
+              "uuid": "443d2a86-7d81-4afa-99cd-3ea87f978e68",
+              "parentUUID": "2467ad80-e1cb-4872-b82a-c35ed387ee17",
               "isHook": false,
               "skipped": false
             }
           ],
           "suites": [],
           "passes": [
-            "2939d71c-06bb-4df0-9d55-dd110431585c"
+            "443d2a86-7d81-4afa-99cd-3ea87f978e68"
           ],
           "failures": [],
           "pending": [],
           "skipped": [],
-          "duration": 4257,
+          "duration": 4312,
           "root": false,
           "rootEmpty": false,
           "_timeout": 2000

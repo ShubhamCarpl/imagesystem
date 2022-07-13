@@ -5,9 +5,9 @@
     "passes": 1,
     "pending": 0,
     "failures": 0,
-    "start": "2022-07-13T06:21:42.310Z",
-    "end": "2022-07-13T06:21:44.466Z",
-    "duration": 2156,
+    "start": "2022-07-13T06:57:06.515Z",
+    "end": "2022-07-13T06:57:08.647Z",
+    "duration": 2132,
     "testsRegistered": 1,
     "passPercent": 100,
     "pendingPercent": 0,
@@ -18,7 +18,7 @@
   },
   "results": [
     {
-      "uuid": "3f66f777-bbff-49ee-9726-9d603b70e808",
+      "uuid": "0e25f178-feab-42a8-a37f-678cbb5c672c",
       "title": "",
       "fullFile": "cypress\\e2e\\spec.cy.js",
       "file": "cypress\\e2e\\spec.cy.js",
@@ -27,7 +27,7 @@
       "tests": [],
       "suites": [
         {
-          "uuid": "82c92725-c52b-4194-bbb1-657411ef5b40",
+          "uuid": "22784743-939c-4809-83e0-8e3a0be0f980",
           "title": "empty spec",
           "fullFile": "",
           "file": "",
@@ -38,7 +38,7 @@
               "title": "passes",
               "fullTitle": "empty spec passes",
               "timedOut": null,
-              "duration": 2115,
+              "duration": 2110,
               "state": "passed",
               "speed": "fast",
               "pass": true,
@@ -47,20 +47,20 @@
               "context": null,
               "code": "cy.visit('http://localhost:3000/');\nconst email = \"Shubha@gmail.com\";\nconst password = \"abcd1234\";\ncy.get('[placeholder=\"email\"]').type(email).should('have.value', email);\ncy.get('[placeholder=\"password\"]').type(password).should('have.value', password); // cy.screenshot()\ncy.get('button').click().should(() => {\n  const jwt = {\n    \"userId\": 1,\n    \"id\": 1,\n    \"title\": \"delectus aut autem\",\n    \"completed\": false\n  };\n  expect(localStorage.getItem('jwt')).to.eq(JSON.stringify(jwt));\n});\ncy.get(':nth-child(5) > li > :nth-child(6)').click(() => {\n  expect(window.alert());\n});\nconst p = 'Picture.png';\ncy.get('.Home > :nth-child(1) > :nth-child(1)').click().attachFile(p);\ncy.get('.Home > :nth-child(1) > :nth-child(3)').click();",
               "err": {},
-              "uuid": "c75b6612-0223-44ff-9558-1301a57f9640",
-              "parentUUID": "82c92725-c52b-4194-bbb1-657411ef5b40",
+              "uuid": "e6b82179-61a7-4d6d-99c1-a14bc2eac887",
+              "parentUUID": "22784743-939c-4809-83e0-8e3a0be0f980",
               "isHook": false,
               "skipped": false
             }
           ],
           "suites": [],
           "passes": [
-            "c75b6612-0223-44ff-9558-1301a57f9640"
+            "e6b82179-61a7-4d6d-99c1-a14bc2eac887"
           ],
           "failures": [],
           "pending": [],
           "skipped": [],
-          "duration": 2115,
+          "duration": 2110,
           "root": false,
           "rootEmpty": false,
           "_timeout": 2000
