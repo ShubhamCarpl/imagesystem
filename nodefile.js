@@ -14,7 +14,6 @@ const sendemail = (res) =>{
   var mailOptions = {
     from: 'shubhamgargshubhamgargshubham@gmail.com',
     to: 'shubham.garg@carpl.ai',
-    cc: 'shubhamgarg1671@gmail.com',
     subject: 'Test Results',
     text: `${res}`
 };
@@ -39,13 +38,11 @@ cypress.run({
     video: false,
   },
 }).then((res)=> {
-  console.log(res);
-  JSON.stringify(res)
-})
-.then((result) =>{
-  var fs = require('fs');
-  fs.writeFile('myResult.json', result, 'utf8', (e)=>{
-    console.log(e);
-  });
-  // sendemail(result);
+  if (res["totalFailed"] !== 0) {  
+    jsonfile.writeFile('loop.json', res, {spaces:2}, function(err){
+      console.log(err);
+    });
+    console.log(`number of tests failed ${res["totalFailed"]}`);
+    // sendemail(`number of tests failed ${res["totalFailed"]}`);
+  }
 });

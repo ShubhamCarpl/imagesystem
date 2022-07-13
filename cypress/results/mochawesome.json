@@ -2,14 +2,14 @@
   "stats": {
     "suites": 1,
     "tests": 1,
-    "passes": 1,
+    "passes": 0,
     "pending": 0,
-    "failures": 0,
-    "start": "2022-07-13T06:21:32.754Z",
-    "end": "2022-07-13T06:21:40.250Z",
-    "duration": 7496,
+    "failures": 1,
+    "start": "2022-07-13T07:39:58.043Z",
+    "end": "2022-07-13T07:40:03.677Z",
+    "duration": 5634,
     "testsRegistered": 1,
-    "passPercent": 100,
+    "passPercent": 0,
     "pendingPercent": 0,
     "other": 0,
     "hasOther": false,
@@ -18,49 +18,53 @@
   },
   "results": [
     {
-      "uuid": "460b2d0c-7ca8-429c-87b1-03e73e15a56c",
+      "uuid": "dbcde262-14e5-4e74-b8a1-5d91d79584a7",
       "title": "",
-      "fullFile": "cypress\\e2e\\playground.cy.js",
-      "file": "cypress\\e2e\\playground.cy.js",
+      "fullFile": "cypress\\e2e\\spec.cy.js",
+      "file": "cypress\\e2e\\spec.cy.js",
       "beforeHooks": [],
       "afterHooks": [],
       "tests": [],
       "suites": [
         {
-          "uuid": "2467ad80-e1cb-4872-b82a-c35ed387ee17",
-          "title": "Tutorialspoint Test",
+          "uuid": "20a97f60-6194-4daf-a3f8-424418a1d48f",
+          "title": "empty spec",
           "fullFile": "",
           "file": "",
           "beforeHooks": [],
           "afterHooks": [],
           "tests": [
             {
-              "title": "Test Case6",
-              "fullTitle": "Tutorialspoint Test Test Case6",
+              "title": "passes",
+              "fullTitle": "empty spec passes",
               "timedOut": null,
-              "duration": 4312,
-              "state": "passed",
-              "speed": "fast",
-              "pass": true,
-              "fail": false,
+              "duration": 5563,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
               "pending": false,
               "context": null,
-              "code": "//file to be uploaded path in project folder\nconst p = 'Picture.png'; // launch URL\ncy.visit(\"https://the-internet.herokuapp.com/upload\"); //upload file with attachFile\ncy.get('#file-upload').attachFile(p); //click on upload\ncy.get('#file-submit').click(); //verify uploaded file\ncy.get('#uploaded-files').contains('Picture');",
-              "err": {},
-              "uuid": "443d2a86-7d81-4afa-99cd-3ea87f978e68",
-              "parentUUID": "2467ad80-e1cb-4872-b82a-c35ed387ee17",
+              "code": "cy.visit('http://localhost:3000/');\nconst email = \"Shubha@gmail.com\";\nconst password = \"abcd1234\";\ncy.get('[placeholder=\"email\"]').type(email).should('have.value', email);\ncy.get('[placeholder=\"password\"]').type(password).should('have.value', password); // cy.screenshot()\ncy.get('button').click().should(() => {\n  const jwt = {\n    \"userId\": 1,\n    \"id\": 2,\n    \"title\": \"delectus aut autem\",\n    \"completed\": false\n  };\n  expect(localStorage.getItem('jwt')).to.eq(JSON.stringify(jwt));\n});\ncy.get(':nth-child(5) > li > :nth-child(6)').click(() => {\n  expect(window.alert());\n});\nconst p = 'Picture.png';\ncy.get('.Home > :nth-child(1) > :nth-child(1)').click().attachFile(p);\ncy.get('.Home > :nth-child(1) > :nth-child(3)').click();",
+              "err": {
+                "message": "AssertionError: Timed out retrying after 4050ms: expected '{\"userId\":1,\"id\":1,\"title\":\"delectus aut autem\",\"completed\":false}' to equal '{\"userId\":1,\"id\":2,\"title\":\"delectus aut autem\",\"completed\":false}'",
+                "estack": "AssertionError: Timed out retrying after 4050ms: expected '{\"userId\":1,\"id\":1,\"title\":\"delectus aut autem\",\"completed\":false}' to equal '{\"userId\":1,\"id\":2,\"title\":\"delectus aut autem\",\"completed\":false}'\n    at Context.eval (http://localhost:3000/__cypress/tests?p=cypress\\e2e\\spec.cy.js:117:46)",
+                "diff": "- '{\"userId\":1,\"id\":1,\"title\":\"delectus aut autem\",\"completed\":false}'\n+ '{\"userId\":1,\"id\":2,\"title\":\"delectus aut autem\",\"completed\":false}'\n"
+              },
+              "uuid": "e4fbf6b7-37e2-4a50-9976-965cee2c9210",
+              "parentUUID": "20a97f60-6194-4daf-a3f8-424418a1d48f",
               "isHook": false,
               "skipped": false
             }
           ],
           "suites": [],
-          "passes": [
-            "443d2a86-7d81-4afa-99cd-3ea87f978e68"
+          "passes": [],
+          "failures": [
+            "e4fbf6b7-37e2-4a50-9976-965cee2c9210"
           ],
-          "failures": [],
           "pending": [],
           "skipped": [],
-          "duration": 4312,
+          "duration": 5563,
           "root": false,
           "rootEmpty": false,
           "_timeout": 2000
@@ -95,7 +99,7 @@
     "marge": {
       "options": {
         "reportDir": "cypress/results",
-        "overwrite": false,
+        "overwrite": true,
         "html": false,
         "json": true
       },

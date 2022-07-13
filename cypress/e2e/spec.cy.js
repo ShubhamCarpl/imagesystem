@@ -15,7 +15,7 @@ describe('empty spec', () => {
     cy.get('button').click().should(() => {
       const jwt = {
         "userId": 1,
-        "id": 1,
+        "id": 2,
         "title": "delectus aut autem",
         "completed": false
       }
